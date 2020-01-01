@@ -10,9 +10,15 @@ h1 {
 }
 
 .list-group {
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .navbar navbar-dark bg-dark {
     text-align: center;
 }
+
+
+.card {
+    width: 9rem;
+}
+
