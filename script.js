@@ -9,6 +9,7 @@ var newyork = $(`#newyork`);
 var washingtondc = $(`#washingtondc`);
 var atlanta = $(`#atlanta`);
 var miami = $(`#miami`);
+var h2 = $(`h2`);
 var temp = $(`#currentTemp`);
 var humid = $(`#currentHumid`);
 var wind = $(`#currentWind`);
@@ -16,7 +17,6 @@ var uv = $(`#currentUV`);
 
 
 
-var h2 = $(`h2`);
 
 setCityName();
 
