@@ -1,3 +1,5 @@
+
+
 h1 {
     color: white;
     text-align: center;
@@ -19,6 +21,33 @@ h1 {
 
 
 .card {
-    width: 9rem;
+    width: 10rem;
 }
 
+#currentSelected {
+    background-color: lightgray;
+}
+
+div#card1 .card {
+    margin: 0 50px;
+}
+
+#card1 {
+    right: 15px;
+}
+
+#card2 {
+    margin: 0 0 0 18%;
+}
+
+#card3 {
+    margin: 0 0 0 43%;
+}
+
+#card4 {
+    margin: 0 0 0 69%;
+}
+
+#card5 {
+    margin: 0 0 0 95%;
+}
