@@ -29,6 +29,10 @@ h1 {
     color: white;
 }
 
+.container-fluid {
+    width: auto;
+}
+
 div#card1 .card {
     margin: 0 50px;
 }
