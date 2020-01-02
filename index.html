@@ -24,66 +24,81 @@
 <!---- Add a search field with submit button!  ---->
         <div class="list-group col-md-3">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Desired City" aria-describedby="button-addon2" id="search">
                 <div class="input-group-append">
-                  <button class="btn btn-primary" type="button" id="search">Go</button>
+                  <button class="btn btn-primary" type="button" id="go">Go</button>
                 </div>
             </div>
-            <a href="#" class="list-group-item list-group-item-action">Denver</a>
-            <a href="#" class="list-group-item list-group-item-action">Seattle</a>
-            <a href="#" class="list-group-item list-group-item-action">Los Angeles</a>
-            <a href="#" class="list-group-item list-group-item-action">Chicago</a>
-            <a href="#" class="list-group-item list-group-item-action">New York</a>
-            <a href="#" class="list-group-item list-group-item-action">Washington D.C.</a>
-            <a href="#" class="list-group-item list-group-item-action">Atlanta</a>
-            <a href="#" class="list-group-item list-group-item-action">Miami</a>
+            <a href="#" class="list-group-item list-group-item-action" id="denver">Denver</a>
+            <a href="#" class="list-group-item list-group-item-action" id="seattle">Seattle</a>
+            <a href="#" class="list-group-item list-group-item-action" id="losangeles">Los Angeles</a>
+            <a href="#" class="list-group-item list-group-item-action" id="chicago">Chicago</a>
+            <a href="#" class="list-group-item list-group-item-action" id="newyork">New York</a>
+            <a href="#" class="list-group-item list-group-item-action" id="washingtondc">Washington D.C.</a>
+            <a href="#" class="list-group-item list-group-item-action" id="atlanta">Atlanta</a>
+            <a href="#" class="list-group-item list-group-item-action" id="miami">Miami</a>
         </div>
 
         <div class="col-md-9">
-
             <div class="row" id="currentSelected">
-
-                <p style="padding: 20px;">Scratch the box carefully drink from water glass and then spill it everywhere and proceed to lick the puddle run off table persian cat jump eat fish but refuse to come home when humans are going to bed; stay out all night then yowl like i am dying at 4am but then cats take over the world or chew on cable, and open the door, let me out, let me out, let me-out, let me-aow, let meaow, meaow!. I'm going to lap some water out of my master's cup meow pee in the shoe hide from vacuum cleaner so climb a tree, wait for a fireman jump to fireman then scratch his face. Kitty scratches couch bad kitty howl on top of tall thing or enslave the hooman scratch my tummy actually i hate you now fight me yet hide from vacuum cleaner. Meow meow mama kitty poochy, walk on keyboard kitty kitty reward the chosen human with a slow blink yet munch, munch, chomp, chomp Gate keepers of hell. </p>
-
+                <div class="jumbotron jumbotron-fluid">
+                  <h2></h2>
+                  <br>
+                  <div id="currentTemp"></div>
+                  <div id="currentHumid"></div>
+                  <div id="currentWind"></div>
+                  <div id="currentUV"></div>
+                  <p style="padding: 20px;">Scratch the box carefully drink from water glass and then spill it everywhere and proceed to lick the puddle run off table persian cat jump eat fish but refuse to come home when humans are going to bed; stay out all night then yowl like i am dying at 4am but then cats take over the world or chew on cable, and open the door, let me out, let me out, let me-out, let me-aow, let meaow, meaow!. I'm going to lap some water out of my master's cup meow pee in the shoe hide from vacuum cleaner so climb a tree, wait for a fireman jump to fireman then scratch his face. Kitty scratches couch bad kitty howl on top of tall thing or enslave the hooman scratch my tummy actually i hate you now fight me yet hide from vacuum cleaner. Meow meow mama kitty poochy, walk on keyboard kitty kitty reward the chosen human with a slow blink yet munch, munch, chomp, chomp Gate keepers of hell. </p>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
                     <div class="card text-white bg-primary mb-3" id="card1">
                         <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <h5 class="card-title" id="date1"></h5>
+                          <p class="card-text" id="icon1">With supporting text below as a natural lead-in to additional content.</p>
+                          <div id="temp1"></div>
+                          <div id="humid1"></div>
                         </div>
                     </div>    
                 </div>
                 <div class="col-md-2">
-                    <div class="card" id="card2">
+                    <div class="card text-white bg-primary mb-3" id="card2">
                         <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <h5 class="card-title" id="date2"></h5>
+                          <p class="card-text" id="icon2">With supporting text below as a natural lead-in to additional content.</p>
+                          <div id="temp2"></div>
+                          <div id="humid2"></div>
                         </div>
                     </div>    
                 </div>
                 <div class="col-md-2">
-                    <div class="card" id="card3">
+                    <div class="card text-white bg-primary mb-3" id="card3">
                         <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <h5 class="card-title" id="date3"></h5>
+                          <p class="card-text" id="icon3">With supporting text below as a natural lead-in to additional content.</p>
+                          <div class="temp3"></div>
+                          <div class="humid3"></div>
                         </div>
                     </div>    
                 </div>
                 <div class="col-md-2">
-                    <div class="card" id="card4">
+                    <div class="card text-white bg-primary mb-3" id="card4">
                         <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
+                          <h5 class="card-title" id="date4"></h5>
                           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <div class="temp4"></div>
+                          <div class="humid4"></div>
                         </div>
                     </div>    
                 </div>
                 <div class="col-md-2">
-                    <div class="card" id="card5">
+                    <div class="card text-white bg-primary mb-3" id="card5">
                         <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
+                          <h5 class="card-title" id="date5"></h5>
                           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <div class="temp5"></div>
+                          <div class="humid5"></div>
                         </div>
                     </div>    
                 </div>

@@ -24,8 +24,9 @@ h1 {
     width: 10rem;
 }
 
-#currentSelected {
-    background-color: lightgray;
+.jumbotron {
+    background-color: purple;
+    color: white;
 }
 
 div#card1 .card {
