@@ -14,7 +14,31 @@ var temp = $(`#currentTemp`);
 var humid = $(`#currentHumid`);
 var wind = $(`#currentWind`);
 var uv = $(`#currentUV`);
-
+var card1 = $(`#card1`);
+var date1 = $(`#date1`);
+var icon1 = $(`#icon1`);
+var temp1 = $(`#temp1`);
+var humid1= $(`#humid1`);
+var card2 = $(`#card2`);
+var date2 = $(`#date2`);
+var icon2 = $(`#icon2`);
+var temp2 = $(`#temp2`);
+var humid2= $(`#humid2`);
+var card3 = $(`#card3`);
+var date3 = $(`#date3`);
+var icon3 = $(`#icon3`);
+var temp3 = $(`#temp3`);
+var humid3= $(`#humid3`);
+var card4 = $(`#card4`);
+var date4 = $(`#date4`);
+var icon4 = $(`#icon4`);
+var temp4 = $(`#temp4`);
+var humid4= $(`#humid4`);
+var card5 = $(`#card5`);
+var date5 = $(`#date5`);
+var icon5 = $(`#icon5`);
+var temp5 = $(`#temp5`);
+var humid5= $(`#humid5`);
 
 
 
@@ -31,7 +55,7 @@ function setCityName() {
 
 //call init function
 
-
+// moment.js to grab current date and for forecast cards?
 
 
 // init function search denver weather (add localStorage later if possible)
