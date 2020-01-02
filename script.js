@@ -1,4 +1,4 @@
-//pointers to html
+// refs to html
 var search = $(`#search`);
 var go = $(`#go`);
 var denver = $(`#denver`);
@@ -10,6 +10,7 @@ var washingtondc = $(`#washingtondc`);
 var atlanta = $(`#atlanta`);
 var miami = $(`#miami`);
 var h2 = $(`h2`);
+var icon = h2.appendChild;
 var temp = $(`#currentTemp`);
 var humid = $(`#currentHumid`);
 var wind = $(`#currentWind`);
@@ -42,15 +43,17 @@ var humid5= $(`#humid5`);
 
 
 
-setCityName();
-
 
 function setCityName() {
     h2.text("Denver!");
 }
 
 
-
+function init() {
+    setCityName();
+    getWeather();
+    
+}
 
 
 //call init function
@@ -62,13 +65,32 @@ function setCityName() {
 
 
 // ajax callback function to grab current weather
+function getWeather() {
+    
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Denver&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+
+        console.log(response);
+        console.log(queryURL);
+
+    })
+
+
+
+}
 
 // ajax callback function to grab 5 day forecast!
 
 
 
 
+// run functions 
 
+init();
 
 
 
