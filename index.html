@@ -122,57 +122,36 @@
         <script src="moment.js"></script>
         <script>
             var printMonth;
-            
-            var year = (moment().get('year'));
-            var month = (moment().get('month'));
-            var date = (moment().get('date'));
-            console.log(year);
-            console.log(month);
-            console.log(date);
-            
-            
-            
-    if (month === 0) {
-        console.log("success")
-        printMonth = "January"
-        console.log(printMonth);
-    }
-    if ('month' === 1) {
-        printMonth = "February"
-    }
-    if ('month' === 2) {
-        printMonth = "March"
-    }
-    if ('month' === 3) {
-        printMonth = "April"
-    }
-    if ('month' === 4) {
-        printMonth = "May"
-    }
-    if ('month' === 5) {
-        printMonth = "June"
-    }
-    if ('month' === 6) {
-        printMonth = "July"
-    }
-    if ('month' === 7) {
-        printMonth = "August"
-    }
-    if ('month' === 8) {
-        printMonth = "September"
-    }
-    if ('month' === 9) {
-        printMonth = "October"
-    }
-    if ('month' === 10) {
-        printMonth = "November"
-    }
-    if ('month' === 11) {
-        printMonth = "December"
-    }
+
+            var rightNow = moment().format(`L`);
+            console.log(rightNow);
+
+            var tomorrowsDate = moment().add(1, 'days').format('L');
+            console.log(tomorrowsDate)
+
+            var dayTwo = moment().add(2, 'days').format('L');
+            console.log(dayTwo);
+
+            var dayThree = moment().add(3, 'days').format('L');
+            console.log(dayThree);
+
+            var dayFour = moment().add(4, 'days').format('L');
+            console.log(dayFour);
+
+            var dayFive = moment().add(5, 'days').format('L');
+            console.log(dayFive);
+
+
+    $(`h3`).text(rightNow);
+    $(`#date1`).text(tomorrowsDate);
+    $(`#date2`).text(dayTwo);
+    $(`#date3`).text(dayThree);
+    $(`#date4`).text(dayFour);
+    $(`#date5`).text(dayFive);
     
 
-    $(`h3`).text(printMonth + " " + moment().get('date') + ", " + moment().get('year'));
+
+    
 </script>
 
 <script src="script.js"></script>
