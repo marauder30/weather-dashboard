@@ -55,7 +55,8 @@ function init() {
     // getLocation();
     setCityName();
     getWeather();
-    uvIndex();
+    initialUV();
+    forecast();
     
     
 }
@@ -81,56 +82,18 @@ function getWeather() {
         
         $(`p`).text("");
         temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
-        humid.text(`Humidity: ` + response.main.humidity);
+        humid.text(`Humidity: ` + response.main.humidity + `%`);
         wind.text(`Wind Speed: ` + response.wind.speed);
     })
 }
 
-// function getLocation () {
-    
-//     const status = $(`#status`);
-//     const mapLink = $(`#map-link`);
-    
-//     mapLink.href = '';
-//     mapLink.textContent = '';
-    
-//     function success(position) {
-//         var location = navigator.geolocation.getCurrentPosition(success, error);
-//         var latitude  = position.coords.latitude.toFixed(2);
-//         var longitude = position.coords.longitude.toFixed(2);
-        
-//         status.textContent = '';
-//         mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-//         mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-        
-//         lat = latitude;
-//         lon = longitude;
-//         console.log(lat);
-//         console.log(lon);
-//         uvIndex();
-//     }
-    
-//     function error() {
-//         status.textContent = 'Unable to retrieve your location';
-//     }
-    
-//     if (!navigator.geolocation) {
-//         status.textContent = 'Geolocation is not supported by your browser';
-//     } else {
-//         status.textContent = 'Locating…';
-//         navigator.geolocation.getCurrentPosition(success, error);
-//     }
-    
-    
-    
-// }
 
-function uvIndex() {
+function initialUV() {
 
     var lat = "39.59";
     var lon = "-104.99"
-
-
+    
+    
     var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
     
     $.ajax({
@@ -139,19 +102,42 @@ function uvIndex() {
     }).then(function(response) {
         
         console.log(response.value);
-
+        
         uvidx = response.value;
-
+        
         uv.text(`UV Index: ` + uvidx);
-
-
-
-
+        
+        
+        
+        
     })
 }
 
 
+function forecast() {
 
+    var cityName = "Denver";
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d"
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+
+        console.log(response);
+        $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+        $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+        $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+        $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+        $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+        $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+        $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+        $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+        $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+        $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");
+
+    })
+}
 
 
 
@@ -170,4 +156,50 @@ function uvIndex() {
 // click listeners will call ajax functions with preset values from buttons 
 // or grab the value from the text field if the go button is pressed
 
-// and then publish the values to each row and card
+
+
+
+
+
+
+
+
+
+    // function getLocation () {
+        
+    //     const status = $(`#status`);
+    //     const mapLink = $(`#map-link`);
+        
+    //     mapLink.href = '';
+    //     mapLink.textContent = '';
+        
+    //     function success(position) {
+    //         var location = navigator.geolocation.getCurrentPosition(success, error);
+    //         var latitude  = position.coords.latitude.toFixed(2);
+    //         var longitude = position.coords.longitude.toFixed(2);
+            
+    //         status.textContent = '';
+    //         mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    //         mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+            
+    //         lat = latitude;
+    //         lon = longitude;
+    //         console.log(lat);
+    //         console.log(lon);
+    //         uvIndex();
+    //     }
+        
+    //     function error() {
+    //         status.textContent = 'Unable to retrieve your location';
+    //     }
+        
+    //     if (!navigator.geolocation) {
+    //         status.textContent = 'Geolocation is not supported by your browser';
+    //     } else {
+    //         status.textContent = 'Locating…';
+    //         navigator.geolocation.getCurrentPosition(success, error);
+    //     }
+        
+        
+        
+    // }
