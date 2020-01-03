@@ -9,6 +9,7 @@ h1 {
 .navbar {
     text-align: center;
     display: block;
+    margin-bottom: 40px;
 }
 
 .list-group {
@@ -27,6 +28,7 @@ h1 {
 .jumbotron {
     background-color: purple;
     color: white;
+    width: 900px;
 }
 
 .container-fluid {
