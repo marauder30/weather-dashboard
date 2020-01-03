@@ -1,121 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.eot">
-    <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.svg">
-    <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.ttf">
-    <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.woff">
-    <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.woff2">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <title>Weather Dashboard</title>
-</head>
-<body>
-
-<nav class="navbar navbar-dark bg-dark">
-    <h1>Weather Dashboard</h1>
-</nav>
-
-
-<!---- Make the below into a column of 3! --->
-<div class="container">
-    <div class="row">
-<!---- Add a search field with submit button!  ---->
-        <div class="list-group col-md-3">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search" aria-label="Desired City" aria-describedby="button-addon2" id="search">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="button" id="go">Go</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.eot">
+        <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.svg">
+        <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.ttf">
+        <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.woff">
+        <link rel="stylesheet" href="assets/font/weathericons-regular-webfont.woff2">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <title>Weather Dashboard</title>
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-dark bg-dark">
+            <h1>Weather Dashboard</h1>
+        </nav>
+        
+        
+        <!---- Make the below into a column of 3! --->
+        <div class="container">
+            <div class="row">
+                <!---- Add a search field with submit button!  ---->
+                <div class="list-group col-md-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Desired City" aria-describedby="button-addon2" id="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="go">Go</button>
+                        </div>
+                    </div>
+                    <a href="#" class="list-group-item list-group-item-action" id="denver">Denver</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="seattle">Seattle</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="losangeles">Los Angeles</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="chicago">Chicago</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="newyork">New York</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="washingtondc">Washington D.C.</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="atlanta">Atlanta</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="miami">Miami</a>
                 </div>
-            </div>
-            <a href="#" class="list-group-item list-group-item-action" id="denver">Denver</a>
-            <a href="#" class="list-group-item list-group-item-action" id="seattle">Seattle</a>
-            <a href="#" class="list-group-item list-group-item-action" id="losangeles">Los Angeles</a>
-            <a href="#" class="list-group-item list-group-item-action" id="chicago">Chicago</a>
-            <a href="#" class="list-group-item list-group-item-action" id="newyork">New York</a>
-            <a href="#" class="list-group-item list-group-item-action" id="washingtondc">Washington D.C.</a>
-            <a href="#" class="list-group-item list-group-item-action" id="atlanta">Atlanta</a>
-            <a href="#" class="list-group-item list-group-item-action" id="miami">Miami</a>
-        </div>
-
-        <div class="col-md-9">
-            <div class="row" id="currentCity">
-                <div class="jumbotron">
-                    <div class="container-fluid">
-                      <h2></h2>
-                      <i class="wi wi-night-sleet"></i>
-                      <br>
-                      <div id="currentTemp"></div>
-                      <div id="currentHumid"></div>
-                      <div id="currentWind"></div>
-                      <div id="currentUV"></div>
-                      <p style="padding: 20px;" id="status"></p>
-                      <a id="map-link" target="_blank"></a>
+                
+                <div class="col-md-9">
+                    <div class="row" id="currentCity">
+                        <div class="jumbotron">
+                            <div class="container-fluid">
+                                <h2></h2><h3></h3>
+                                <i class="wi wi-night-sleet"></i>
+                                <br>
+                                <div id="currentTemp"></div>
+                                <div id="currentHumid"></div>
+                                <div id="currentWind"></div>
+                                <div id="currentUV"></div>
+                                <p style="padding: 20px;" id="status"></p>
+                                <a id="map-link" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="card text-white bg-primary mb-3" id="card1">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="date1"></h5>
+                                    <p class="card-text" id="icon1">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div id="temp1"></div>
+                                    <div id="humid1"></div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card text-white bg-primary mb-3" id="card2">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="date2"></h5>
+                                    <p class="card-text" id="icon2">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div id="temp2"></div>
+                                    <div id="humid2"></div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card text-white bg-primary mb-3" id="card3">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="date3"></h5>
+                                    <p class="card-text" id="icon3">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div id="temp3"></div>
+                                    <div id="humid3"></div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card text-white bg-primary mb-3" id="card4">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="date4"></h5>
+                                    <p class="card-text" id="icon4">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div id="temp4"></div>
+                                    <div id="humid4"></div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card text-white bg-primary mb-3" id="card5">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="date5"></h5>
+                                    <p class="card-text" id="icon5">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div id="temp5"></div>
+                                    <div id="humid5"></div>
+                                </div>
+                            </div>    
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="card text-white bg-primary mb-3" id="card1">
-                        <div class="card-body">
-                          <h5 class="card-title" id="date1"></h5>
-                          <p class="card-text" id="icon1">With supporting text below as a natural lead-in to additional content.</p>
-                          <div id="temp1"></div>
-                          <div id="humid1"></div>
-                        </div>
-                    </div>    
-                </div>
-                <div class="col-md-2">
-                    <div class="card text-white bg-primary mb-3" id="card2">
-                        <div class="card-body">
-                          <h5 class="card-title" id="date2"></h5>
-                          <p class="card-text" id="icon2">With supporting text below as a natural lead-in to additional content.</p>
-                          <div id="temp2"></div>
-                          <div id="humid2"></div>
-                        </div>
-                    </div>    
-                </div>
-                <div class="col-md-2">
-                    <div class="card text-white bg-primary mb-3" id="card3">
-                        <div class="card-body">
-                          <h5 class="card-title" id="date3"></h5>
-                          <p class="card-text" id="icon3">With supporting text below as a natural lead-in to additional content.</p>
-                          <div id="temp3"></div>
-                          <div id="humid3"></div>
-                        </div>
-                    </div>    
-                </div>
-                <div class="col-md-2">
-                    <div class="card text-white bg-primary mb-3" id="card4">
-                        <div class="card-body">
-                          <h5 class="card-title" id="date4"></h5>
-                          <p class="card-text" id="icon4">With supporting text below as a natural lead-in to additional content.</p>
-                          <div id="temp4"></div>
-                          <div id="humid4"></div>
-                        </div>
-                    </div>    
-                </div>
-                <div class="col-md-2">
-                    <div class="card text-white bg-primary mb-3" id="card5">
-                        <div class="card-body">
-                          <h5 class="card-title" id="date5"></h5>
-                          <p class="card-text" id="icon5">With supporting text below as a natural lead-in to additional content.</p>
-                          <div id="temp5"></div>
-                          <div id="humid5"></div>
-                        </div>
-                    </div>    
-                </div>
-            </div>
         </div>
-    </div>
-</div>
 
+
+
+
+        <script src="moment.js"></script>
+        <script>
+            var printMonth;
+            
+            var year = (moment().get('year'));
+            var month = (moment().get('month'));
+            var date = (moment().get('date'));
+            console.log(year);
+            console.log(month);
+            console.log(date);
+            
+            
+            
+    if (month === 0) {
+        console.log("success")
+        printMonth = "January"
+        console.log(printMonth);
+    }
+    if ('month' === 1) {
+        printMonth = "February"
+    }
+    if ('month' === 2) {
+        printMonth = "March"
+    }
+    if ('month' === 3) {
+        printMonth = "April"
+    }
+    if ('month' === 4) {
+        printMonth = "May"
+    }
+    if ('month' === 5) {
+        printMonth = "June"
+    }
+    if ('month' === 6) {
+        printMonth = "July"
+    }
+    if ('month' === 7) {
+        printMonth = "August"
+    }
+    if ('month' === 8) {
+        printMonth = "September"
+    }
+    if ('month' === 9) {
+        printMonth = "October"
+    }
+    if ('month' === 10) {
+        printMonth = "November"
+    }
+    if ('month' === 11) {
+        printMonth = "December"
+    }
+    
+
+    $(`h3`).text(printMonth + " " + moment().get('date') + ", " + moment().get('year'));
+</script>
 
 <script src="script.js"></script>
 </body>
