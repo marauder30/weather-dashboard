@@ -119,7 +119,7 @@ function initialUV() {
 function forecast() {
 
     var cityName = "Denver";
-    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d"
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
 
     $.ajax({
         url: queryURL,
@@ -145,15 +145,13 @@ function forecast() {
 function searchWeather() {
     
     var cityName = $(`#search`)[0].value;
-    console.log(cityName);
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d"
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
     
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
 
-        console.log(response);
         h2.text("");
         h2.text(response.name);
         temp.text("");
@@ -163,9 +161,36 @@ function searchWeather() {
         wind.text("");
         wind.text(`Wind Speed: ` + response.wind.speed);
 
-        
+        newForecast();
 
     })
+}
+
+function newForecast() {
+
+    var cityName = $(`#search`)[0].value;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+
+        $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+        $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+        $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+        $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+        $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+        $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+        $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+        $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+        $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+        $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");
+
+
+
+    })
+
 }
 
 
