@@ -144,8 +144,8 @@ function forecast() {
 
 function searchWeather() {
     
-    var cityName = search.value;
-    console.log(search.value);
+    var cityName = $(`#search`)[0].value;
+    console.log(cityName);
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d"
     
     $.ajax({
@@ -154,6 +154,16 @@ function searchWeather() {
     }).then(function(response) {
 
         console.log(response);
+        h2.text("");
+        h2.text(response.name);
+        temp.text("");
+        temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+        humid.text("");
+        humid.text(`Humidity: ` + response.main.humidity + `%`);
+        wind.text("");
+        wind.text(`Wind Speed: ` + response.wind.speed);
+
+        
 
     })
 }
@@ -164,15 +174,15 @@ function searchWeather() {
 document.addEventListener("click", function(event) {
 
     var element = event.target;
-    console.log(element);
 
-    
     if (element.matches("#go") === true) {
         console.log("success!");
         
         var searchCity = $(`#search`)[0].value;
         // console.log($(`#search`)[0].value);
         console.log(searchCity);
+
+        searchWeather();
         
     }
 

@@ -114,35 +114,24 @@
 
 
 
-        <script src="moment.js"></script>
-        <script>
-            var printMonth;
+<script src="moment.js"></script>
+<script>
+            
+var printMonth;
 
-            var rightNow = moment().format(`L`);
-            console.log(rightNow);
+var rightNow = moment().format(`L`);
+var tomorrowsDate = moment().add(1, 'days').format('L');
+var dayTwo = moment().add(2, 'days').format('L');
+var dayThree = moment().add(3, 'days').format('L');
+var dayFour = moment().add(4, 'days').format('L');
+var dayFive = moment().add(5, 'days').format('L');
 
-            var tomorrowsDate = moment().add(1, 'days').format('L');
-            console.log(tomorrowsDate)
-
-            var dayTwo = moment().add(2, 'days').format('L');
-            console.log(dayTwo);
-
-            var dayThree = moment().add(3, 'days').format('L');
-            console.log(dayThree);
-
-            var dayFour = moment().add(4, 'days').format('L');
-            console.log(dayFour);
-
-            var dayFive = moment().add(5, 'days').format('L');
-            console.log(dayFive);
-
-
-    $(`h3`).text(rightNow);
-    $(`#date1`).text(tomorrowsDate);
-    $(`#date2`).text(dayTwo);
-    $(`#date3`).text(dayThree);
-    $(`#date4`).text(dayFour);
-    $(`#date5`).text(dayFive);
+$(`h3`).text(rightNow);
+$(`#date1`).text(tomorrowsDate);
+$(`#date2`).text(dayTwo);
+$(`#date3`).text(dayThree);
+$(`#date4`).text(dayFour);
+$(`#date5`).text(dayFive);
     
 
 
