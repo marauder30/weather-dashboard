@@ -1,6 +1,5 @@
 // refs to html
 var search = $(`#search`);
-var go = $(`#go`);
 var denver = $(`#denver`);
 var seattle = $(`#seattle`);
 var losangeles = $(`#losangeles`);
@@ -39,8 +38,9 @@ var card5 = $(`#card5`);
 var date5 = $(`#date5`);
 var icon5 = $(`#icon5`);
 var temp5 = $(`#temp5`);
-var humid5= $(`#humid5`);
+var humid5 = $(`#humid5`);
 var uvidx;
+var sidebar = $(`#sidebar`);
 
 
 init();
@@ -114,6 +114,8 @@ function initialUV() {
 }
 
 
+// ajax callback function to grab 5 day forecast!
+
 function forecast() {
 
     var cityName = "Denver";
@@ -124,7 +126,6 @@ function forecast() {
         method: "GET"
     }).then(function(response) {
 
-        console.log(response);
         $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
         $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
         $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
@@ -141,14 +142,42 @@ function forecast() {
 
 
 
-// ajax callback function to grab 5 day forecast!
+function searchWeather() {
+    
+    var cityName = search.value;
+    console.log(search.value);
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d"
+    
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
 
+        console.log(response);
 
+    })
+}
 
 
 // run functions 
 
+document.addEventListener("click", function(event) {
 
+    var element = event.target;
+    console.log(element);
+
+    
+    if (element.matches("#go") === true) {
+        console.log("success!");
+        
+        var searchCity = $(`#search`)[0].value;
+        // console.log($(`#search`)[0].value);
+        console.log(searchCity);
+        
+    }
+
+
+})
 
 
 
