@@ -40,8 +40,6 @@ var date5 = $(`#date5`);
 var icon5 = $(`#icon5`);
 var temp5 = $(`#temp5`);
 var humid5= $(`#humid5`);
-var lat;
-var lon;
 var uvidx;
 
 
@@ -146,7 +144,6 @@ function uvIndex() {
 
         uv.text(`UV Index: ` + uvidx);
 
-        console.log(uv);
 
 
 
