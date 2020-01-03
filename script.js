@@ -13,7 +13,7 @@ var icon = h2.appendChild;
 var temp = $(`#currentTemp`);
 var humid = $(`#currentHumid`);
 var wind = $(`#currentWind`);
-var uv = $(`#currentUV`);
+var uv = $(`#styleUV`);
 var card1 = $(`#card1`);
 var date1 = $(`#date1`);
 var icon1 = $(`#icon1`);
@@ -41,6 +41,8 @@ var temp5 = $(`#temp5`);
 var humid5 = $(`#humid5`);
 var uvidx;
 var sidebar = $(`#sidebar`);
+var searchLat;
+var searchLon;
 
 
 init();
@@ -105,7 +107,7 @@ function initialUV() {
         
         uvidx = response.value;
         
-        uv.text(`UV Index: ` + uvidx);
+        uv.text(uvidx);
         
         
         
@@ -161,21 +163,28 @@ function searchWeather() {
         wind.text("");
         wind.text(`Wind Speed: ` + response.wind.speed);
 
-        newForecast();
 
+        searchLat = (response.coord.lat);
+        searchLon = (response.coord.lon);
+
+
+        
+        newForecast();
+        newUV();
+        
     })
 }
 
 function newForecast() {
-
+    
     var cityName = $(`#search`)[0].value;
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
-
+    
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-
+        
         $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
         $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
         $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
@@ -186,8 +195,26 @@ function newForecast() {
         $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
         $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
         $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");
+        
+        
+        
+    })
+    
+}
+
+function newUV() {
+
+    var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + searchLat + "&lon=" + searchLon + "&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
 
 
+        uvidx = response.value;
+        
+        uv.text(uvidx);
 
     })
 
