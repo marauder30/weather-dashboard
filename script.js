@@ -163,12 +163,9 @@ function searchWeather() {
         wind.text("");
         wind.text(`Wind Speed: ` + response.wind.speed);
 
-
         searchLat = (response.coord.lat);
         searchLon = (response.coord.lon);
-
-
-        
+      
         newForecast();
         newUV();
         
@@ -184,7 +181,7 @@ function newForecast() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        
+               
         $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
         $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
         $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
@@ -194,12 +191,9 @@ function newForecast() {
         $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
         $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
         $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
-        $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");
+        $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
         
-        
-        
-    })
-    
+    })    
 }
 
 function newUV() {
@@ -227,16 +221,400 @@ document.addEventListener("click", function(event) {
 
     var element = event.target;
 
-    if (element.matches("#go") === true) {
-        console.log("success!");
+    if (element.matches(`#go`) === true) {
         
         var searchCity = $(`#search`)[0].value;
-        // console.log($(`#search`)[0].value);
         console.log(searchCity);
 
         searchWeather();
         
     }
+
+    if (element.matches(`#denver`) === true) {
+
+        var searchCity = "Denver";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Denver&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Denver&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+    if (element.matches(`#seattle`) === true) {
+
+        var searchCity = "Seattle";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Seattle&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Seattle&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+    if (element.matches(`#losangeles`) === true) {
+
+        var searchCity = "Los Angeles";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Los+Angeles&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Los+Angeles&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+    if (element.matches(`#chicago`) === true) {
+
+        var searchCity = "Chicago";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Chicago&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Chicago&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+    if (element.matches(`#newyork`) === true) {
+
+        var searchCity = "New York";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=New+York&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=New+York&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+    if (element.matches(`#philadelphia`) === true) {
+
+        var searchCity = "Philadelphia";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Philadelphia&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Philadelphia&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+    if (element.matches(`#atlanta`) === true) {
+
+        var searchCity = "Atlanta";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Atlanta&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+    if (element.matches(`#miami`) === true) {
+
+        var searchCity = "Miami";
+
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Miami&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            h2.text("");
+            h2.text(response.name);
+            temp.text("");
+            temp.text(`Current Temperature: ` + Math.floor(response.main.temp) + ` °F`);
+            humid.text("");
+            humid.text(`Humidity: ` + response.main.humidity + `%`);
+            wind.text("");
+            wind.text(`Wind Speed: ` + response.wind.speed);
+    
+    
+            searchLat = (response.coord.lat);
+            searchLon = (response.coord.lon);
+
+            newUV();
+
+            var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Miami&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
+
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                       
+                $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
+                $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
+                $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
+                $(`#humid2`).text("Humid: " + response.list[14].main.humidity + "%");
+                $(`#temp3`).text("Temp: " + Math.ceil(response.list[22].main.temp) + "°F");
+                $(`#humid3`).text("Humid: " + response.list[22].main.humidity + "%");
+                $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
+                $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
+                $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                
+            })     
+        })
+    }
+
 
 
 })
