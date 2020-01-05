@@ -57,11 +57,11 @@ function setCityName() {
 
 function init() {
     // getLocalStorage();
+    getWeather();
 
     search[0].value = localStorage.getItem("search");
     searchWeather();
     setCityName();
-    getWeather();
     initialUV();
     forecast();
     
@@ -155,6 +155,8 @@ function searchWeather() {
         method: "GET"
     }).then(function(response) {
 
+
+        console.log(response.weather[0].id);
         h2.text("");
         h2.text(response.name);
         temp.text("");
@@ -169,6 +171,13 @@ function searchWeather() {
       
         newForecast();
         newUV();
+
+        var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+        console.log(iconCurrent);
+        $(`#todayIcon`).append(iconCurrent[0]);
+        
+
+
         
     })
 }
@@ -215,6 +224,8 @@ function newUV() {
 
 }
 
+
+
 // function setLocalStorage() {
 
 //     value = $(`#search`)[0].value;
@@ -245,7 +256,7 @@ document.addEventListener("click", function(event) {
         localStorage.setItem("search", searchCity);
 
         searchWeather();
-        // setLocalStorage();
+
         
     }
 
