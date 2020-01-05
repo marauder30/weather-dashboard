@@ -43,18 +43,21 @@ var uvidx;
 var sidebar = $(`#sidebar`);
 var searchLat;
 var searchLon;
+var value;
 
 
 init();
 
 
 function setCityName() {
-    h2.text("Denver!");
+    h2.text("Denver");
 }
 
 
 function init() {
-    // getLocation();
+    // getLocalStorage();
+
+    search[0].value = localStorage.getItem("search");
     setCityName();
     getWeather();
     initialUV();
@@ -214,6 +217,22 @@ function newUV() {
 
 }
 
+// function setLocalStorage() {
+
+//     value = $(`#search`)[0].value;
+//     localStorage.setItem("search", value);
+
+//     console.log(value);
+    
+
+// }
+
+// function getLocalStorage() {
+
+//     // console.log(value);
+
+//     search.value = localStorage.getItem("search");
+// }
 
 // run functions 
 
@@ -225,8 +244,10 @@ document.addEventListener("click", function(event) {
         
         var searchCity = $(`#search`)[0].value;
         console.log(searchCity);
+        localStorage.setItem("search", searchCity);
 
         searchWeather();
+        // setLocalStorage();
         
     }
 

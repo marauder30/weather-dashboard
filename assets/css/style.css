@@ -61,8 +61,10 @@ div#card1 .card {
 
 #styleuv {
     background: red;
+    padding: 6px;
+    border-radius: 10px;
 }
 
-.fa, .fas {
+/* .fa, .fas {
     font-size: xxx-large;
-}
+} */
