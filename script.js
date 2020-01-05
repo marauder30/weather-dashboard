@@ -173,7 +173,6 @@ function searchWeather() {
         newUV();
 
         var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
-        console.log(iconCurrent);
         $(`#todayIcon`).append(iconCurrent[0]);
         
 
@@ -284,6 +283,9 @@ document.addEventListener("click", function(event) {
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
 
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
+
             newUV();
 
             var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Denver&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
@@ -331,6 +333,9 @@ document.addEventListener("click", function(event) {
     
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
+
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
 
             newUV();
 
@@ -380,6 +385,9 @@ document.addEventListener("click", function(event) {
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
 
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
+
             newUV();
 
             var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Los+Angeles&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
@@ -427,6 +435,9 @@ document.addEventListener("click", function(event) {
     
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
+
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
 
             newUV();
 
@@ -476,6 +487,9 @@ document.addEventListener("click", function(event) {
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
 
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
+
             newUV();
 
             var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=New+York&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
@@ -523,6 +537,9 @@ document.addEventListener("click", function(event) {
     
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
+
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
 
             newUV();
 
@@ -572,6 +589,9 @@ document.addEventListener("click", function(event) {
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
 
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
+
             newUV();
 
             var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=Atlanta&units=imperial&appid=b4e24afa7b1b97b59d4ac32e97c8b68d";
@@ -619,6 +639,9 @@ document.addEventListener("click", function(event) {
     
             searchLat = (response.coord.lat);
             searchLon = (response.coord.lon);
+
+            var iconCurrent = $(`<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png">`);
+            $(`#todayIcon`).append(iconCurrent[0]);
 
             newUV();
 
