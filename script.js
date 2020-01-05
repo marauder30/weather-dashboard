@@ -129,6 +129,13 @@ function forecast() {
         method: "GET"
     }).then(function(response) {
 
+        var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+        var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+        var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+        var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+        var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
+
+        
         $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
         $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
         $(`#temp2`).text("Temp: " + Math.ceil(response.list[14].main.temp) + "°F");
@@ -139,7 +146,12 @@ function forecast() {
         $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
         $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
         $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");
-
+        
+        $(`#icon1`).append(iconTomorrow[0]);
+        $(`#icon2`).append(icon2Days[0]);
+        $(`#icon3`).append(icon3Days[0]);
+        $(`#icon4`).append(icon4Days[0]);
+        $(`#icon5`).append(icon5Days[0]);
     })
 }
 
@@ -190,6 +202,13 @@ function newForecast() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
+
+        var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+        var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+        var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+        var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+        var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
+
                
         $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
         $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -201,6 +220,19 @@ function newForecast() {
         $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
         $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
         $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+
+        $(`#icon1`).html("");
+        $(`#icon2`).html("");
+        $(`#icon3`).html("");
+        $(`#icon4`).html("");
+        $(`#icon5`).html("");
+        $(`#icon1`).append(iconTomorrow[0]);
+        $(`#icon2`).append(icon2Days[0]);
+        $(`#icon3`).append(icon3Days[0]);
+        $(`#icon4`).append(icon4Days[0]);
+        $(`#icon5`).append(icon5Days[0]);
+
+
         
     })    
 }
@@ -295,6 +327,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -305,7 +343,18 @@ document.addEventListener("click", function(event) {
                 $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
-                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");  
+                
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
@@ -346,6 +395,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -356,7 +411,18 @@ document.addEventListener("click", function(event) {
                 $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
-                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");  
+                
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
@@ -397,6 +463,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -408,6 +480,17 @@ document.addEventListener("click", function(event) {
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
                 $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
@@ -448,6 +531,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -458,7 +547,18 @@ document.addEventListener("click", function(event) {
                 $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
-                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");  
+                
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
@@ -499,6 +599,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -510,6 +616,17 @@ document.addEventListener("click", function(event) {
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
                 $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
@@ -550,6 +667,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -561,6 +684,17 @@ document.addEventListener("click", function(event) {
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
                 $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
@@ -601,6 +735,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -611,7 +751,18 @@ document.addEventListener("click", function(event) {
                 $(`#temp4`).text("Temp: " + Math.ceil(response.list[30].main.temp) + "°F");
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
-                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+                $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%"); 
+                
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
@@ -652,6 +803,12 @@ document.addEventListener("click", function(event) {
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var iconTomorrow = $(`<img src="http://openweathermap.org/img/w/${response.list[6].weather[0].icon}.png">`);
+                var icon2Days = $(`<img src="http://openweathermap.org/img/w/${response.list[14].weather[0].icon}.png">`);
+                var icon3Days = $(`<img src="http://openweathermap.org/img/w/${response.list[22].weather[0].icon}.png">`);
+                var icon4Days = $(`<img src="http://openweathermap.org/img/w/${response.list[30].weather[0].icon}.png">`);
+                var icon5Days = $(`<img src="http://openweathermap.org/img/w/${response.list[38].weather[0].icon}.png">`);
                        
                 $(`#temp1`).text("Temp: " + Math.ceil(response.list[6].main.temp) + "°F");
                 $(`#humid1`).text("Humid: " + response.list[6].main.humidity + "%");
@@ -663,6 +820,17 @@ document.addEventListener("click", function(event) {
                 $(`#humid4`).text("Humid: " + response.list[30].main.humidity + "%");
                 $(`#temp5`).text("Temp: " + Math.ceil(response.list[38].main.temp) + "°F");
                 $(`#humid5`).text("Humid: " + response.list[38].main.humidity + "%");   
+
+                $(`#icon1`).html("");
+                $(`#icon2`).html("");
+                $(`#icon3`).html("");
+                $(`#icon4`).html("");
+                $(`#icon5`).html("");
+                $(`#icon1`).append(iconTomorrow[0]);
+                $(`#icon2`).append(icon2Days[0]);
+                $(`#icon3`).append(icon3Days[0]);
+                $(`#icon4`).append(icon4Days[0]);
+                $(`#icon5`).append(icon5Days[0]);
                 
             })     
         })
