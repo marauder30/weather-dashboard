@@ -50,7 +50,8 @@ init();
 
 
 function setCityName() {
-    h2.text("Denver");
+    h2.text(localStorage.getItem("search"));
+
 }
 
 
@@ -58,6 +59,7 @@ function init() {
     // getLocalStorage();
 
     search[0].value = localStorage.getItem("search");
+    searchWeather();
     setCityName();
     getWeather();
     initialUV();
@@ -66,10 +68,6 @@ function init() {
     
 }
 
-
-//call init function
-
-// moment.js to grab current date and for forecast cards?
 
 
 // init function search denver weather (add localStorage later if possible)
